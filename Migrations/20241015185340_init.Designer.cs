@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF_CodeFirst.Migrations
 {
     [DbContext(typeof(SchoolDbContext))]
-    [Migration("20241015173926_seed")]
-    partial class seed
+    [Migration("20241015185340_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -54,50 +54,50 @@ namespace EF_CodeFirst.Migrations
                         new
                         {
                             GradeId = 1,
-                            GradeName = "A",
-                            Section = "1",
+                            GradeName = "5",
+                            Section = "Matematika",
                             StudentId = 1
                         },
                         new
                         {
                             GradeId = 2,
-                            GradeName = "B",
-                            Section = "1",
+                            GradeName = "4",
+                            Section = "Hrvatski",
                             StudentId = 1
                         },
                         new
                         {
                             GradeId = 3,
-                            GradeName = "C",
-                            Section = "2",
+                            GradeName = "5",
+                            Section = "Povijest",
                             StudentId = 2
                         },
                         new
                         {
                             GradeId = 4,
-                            GradeName = "D",
-                            Section = "2",
+                            GradeName = "3",
+                            Section = "Geografija",
                             StudentId = 2
                         },
                         new
                         {
                             GradeId = 5,
-                            GradeName = "E",
-                            Section = "1",
+                            GradeName = "5",
+                            Section = "Fizika",
                             StudentId = 1
                         },
                         new
                         {
                             GradeId = 6,
-                            GradeName = "F",
-                            Section = "2",
+                            GradeName = "4",
+                            Section = "Kemija",
                             StudentId = 2
                         },
                         new
                         {
                             GradeId = 7,
-                            GradeName = "G",
-                            Section = "1",
+                            GradeName = "3",
+                            Section = "Biologija",
                             StudentId = 1
                         });
                 });

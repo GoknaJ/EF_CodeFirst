@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace EF_CodeFirst.Migrations
 {
     /// <inheritdoc />
-    public partial class seed : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -64,13 +64,13 @@ namespace EF_CodeFirst.Migrations
                 columns: new[] { "GradeId", "GradeName", "Section", "StudentId" },
                 values: new object[,]
                 {
-                    { 1, "A", "1", 1 },
-                    { 2, "B", "1", 1 },
-                    { 3, "C", "2", 2 },
-                    { 4, "D", "2", 2 },
-                    { 5, "E", "1", 1 },
-                    { 6, "F", "2", 2 },
-                    { 7, "G", "1", 1 }
+                    { 1, "5", "Matematika", 1 },
+                    { 2, "4", "Hrvatski", 1 },
+                    { 3, "5", "Povijest", 2 },
+                    { 4, "3", "Geografija", 2 },
+                    { 5, "5", "Fizika", 1 },
+                    { 6, "4", "Kemija", 2 },
+                    { 7, "3", "Biologija", 1 }
                 });
 
             migrationBuilder.CreateIndex(

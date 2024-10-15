@@ -12,22 +12,20 @@ public class SchoolDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Student>().HasKey(s => s.StudentID);
-        modelBuilder.Entity<Grade>().HasKey(g => g.GradeId);
-        modelBuilder.Entity<Grade>().HasOne(g => g.Student).WithMany(s => s.Grades).HasForeignKey(g => g.StudentId);
-    }
+        modelBuilder.Entity<Student>().HasData(
+            new Student { StudentID = 1, StudentName = "Pero", DateOfBirth = new DateTime(1995, 1, 1), Height = 188M, Weight = 85F },
+            new Student { StudentID = 2, StudentName = "Ana", DateOfBirth = new DateTime(1997, 5, 15), Height = 170M, Weight = 65F }
+        );
 
-    public void Seed()
-    {
-        Students.Add(new Student { StudentName = "Pero", DateOfBirth = new DateTime(1995, 1, 1), Height = 1.80m, Weight = 70.0f });
-        Students.Add(new Student { StudentName = "Ana", DateOfBirth = new DateTime(1997, 2, 2), Height = 1.60m, Weight = 55.0f });
+        modelBuilder.Entity<Grade>().HasData(
+            new Grade { GradeId = 1, GradeName = "5", Section = "Matematika", StudentId = 1 },
+            new Grade { GradeId = 2, GradeName = "4", Section = "Hrvatski", StudentId = 1 },
+            new Grade { GradeId = 3, GradeName = "5", Section = "Povijest", StudentId = 2 },
+            new Grade { GradeId = 4, GradeName = "3", Section = "Geografija", StudentId = 2 },
+            new Grade { GradeId = 5, GradeName = "5", Section = "Fizika", StudentId = 1 },
+            new Grade { GradeId = 6, GradeName = "4", Section = "Kemija", StudentId = 2 },
+            new Grade { GradeId = 7, GradeName = "3", Section = "Biologija", StudentId = 1 }
+        );
 
-        Grades.Add(new Grade { GradeName = "A", Section = "Matematika", StudentId = 1 });
-        Grades.Add(new Grade { GradeName = "B", Section = "Kemija", StudentId = 1 });
-        Grades.Add(new Grade { GradeName = "A", Section = "Hrvatski", StudentId = 2 });
-        Grades.Add(new Grade { GradeName = "B", Section = "Povijest", StudentId = 2 });
-        Grades.Add(new Grade { GradeName = "C", Section = "Fizika", StudentId = 1 });
-        Grades.Add(new Grade { GradeName = "A", Section = "Biologija", StudentId = 2 });
-        Grades.Add(new Grade { GradeName = "B", Section = "Engleski", StudentId = 1 });
     }
 }
